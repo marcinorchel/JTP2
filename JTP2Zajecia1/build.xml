@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_jar" name="Create Jar for Project JTPZajecia1 with libraries in sub-folder">
+    <target name="create_jar">
+        <jar destfile="program/jtpzajecia1.jar">
+            <manifest>
+                <attribute name="Class-Path" value=". jtpzajecia_lib/logback-classic-1.0.3.jar jtpzajecia_lib/logback-core-1.0.3.jar jtpzajecia_lib/slf4j-api-1.6.4.jar"/>
+            </manifest>
+            <fileset dir="target/classes"/>
+        </jar>
+    	<property environment="env"/>
+        <delete dir="program/jtpzajecia_lib"/>
+        <mkdir dir="program/jtpzajecia_lib"/>
+        <copy file="${env.M2_REPO}/ch/qos/logback/logback-classic/1.0.3/logback-classic-1.0.3.jar" todir="program/jtpzajecia_lib"/>
+        <copy file="${env.M2_REPO}/ch/qos/logback/logback-core/1.0.3/logback-core-1.0.3.jar" todir="program/jtpzajecia_lib"/>
+        <copy file="${env.M2_REPO}/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar" todir="program/jtpzajecia_lib"/>
+    </target>
+</project>
