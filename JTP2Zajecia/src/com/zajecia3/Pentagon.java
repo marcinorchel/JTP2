@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Polygon;
 import java.awt.Shape;
 
-public class Pentagon extends MyShape
+public class Pentagon extends MyDrawableShape
 {
 	public Pentagon(Color color)
 	{

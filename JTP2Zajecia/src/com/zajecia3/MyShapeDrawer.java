@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 
 public class MyShapeDrawer extends JPanel
 {
-	private final List<IMyShape> myShapes;
+	private final List<IMyDrawableShape> myShapes;
 
-	public MyShapeDrawer(List<IMyShape> myShapes)
+	public MyShapeDrawer(List<IMyDrawableShape> myShapes)
 	{
 		this.myShapes = myShapes;
 	}
@@ -24,7 +24,7 @@ public class MyShapeDrawer extends JPanel
 	{
 		super.paintComponent(g);
 		Dimension size = this.getSize();
-		for (IMyShape myShape : myShapes)
+		for (IMyDrawableShape myShape : myShapes)
 		{
 			g.setColor(myShape.getColor());
 			((Graphics2D) g).draw(myShape.getAwtShape(size.width, size.height));
@@ -34,7 +34,7 @@ public class MyShapeDrawer extends JPanel
 	public static void main(String[] args)
 	{
 		Pentagon pentagon = new Pentagon(Color.RED);
-		List<IMyShape> myShapes = new ArrayList<>();
+		List<IMyDrawableShape> myShapes = new ArrayList<>();
 		myShapes.add(pentagon);
 		MyShapeDrawer drawer = new MyShapeDrawer(myShapes);
 		JFrame frame = new JFrame();

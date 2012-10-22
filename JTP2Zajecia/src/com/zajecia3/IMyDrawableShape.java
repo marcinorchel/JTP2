@@ -3,7 +3,7 @@ package com.zajecia3;
 import java.awt.Color;
 import java.awt.Shape;
 
-public interface IMyShape
+public interface IMyDrawableShape
 {
 	Shape getAwtShape(int width, int height);
 

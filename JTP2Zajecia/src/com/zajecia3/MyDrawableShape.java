@@ -2,11 +2,11 @@ package com.zajecia3;
 
 import java.awt.Color;
 
-public abstract class MyShape implements IMyShape
+public abstract class MyDrawableShape implements IMyDrawableShape
 {
 	private final Color color;
 
-	public MyShape(Color color)
+	public MyDrawableShape(Color color)
 	{
 		this.color = color;
 	}
